@@ -1,0 +1,14 @@
+.container-grid {
+  margin: auto;
+  width: 90%;
+  border-radius: 0.5rem;
+  background: #97bcec;
+  padding: 10px;
+  border-bottom: 1px black solid;
+  display: grid;
+  grid-template-columns: 13fr 1fr;
+}
+
+.section-signUp {
+  padding-top: 3rem;
+}
