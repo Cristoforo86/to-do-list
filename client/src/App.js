@@ -32,7 +32,7 @@ class App extends Component {
     console.log("1", config);
 
     axios
-      .get("http://localhost:5000/todos", config)
+      .get("/todos", config)
 
       .then(res =>
         this.setState({ todos: res.data }, () => {
@@ -46,7 +46,7 @@ class App extends Component {
 
   addTodo = async title => {
     axios.defaults.headers.post["auth-token"] = `${this.state.token}`;
-    const res = await axios.post("http://localhost:5000/todos", {
+    const res = await axios.post("/todos", {
       title: title
     });
     try {
@@ -67,7 +67,7 @@ class App extends Component {
     let target = id.target.value;
     console.log(id.target.value);
     axios
-      .delete(`http://localhost:5000/todos/${target}`, config)
+      .delete(`/todos/${target}`, config)
       .then(res =>
         this.setState({
           todos: [...this.state.todos.filter(todo => todo._id !== target)]
@@ -83,7 +83,7 @@ class App extends Component {
   //LOGIN
   logIn = (email, password) => {
     axios
-      .post("http://localhost:5000/api/user/login", {
+      .post("/api/user/login", {
         email: email,
         password: password
       })
@@ -106,7 +106,7 @@ class App extends Component {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/user/register",
+        "/api/user/register",
         JSON.stringify(data),
         config
       );

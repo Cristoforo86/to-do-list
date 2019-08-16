@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { Button, Input, Form } from "reactstrap";
-// import { useSelector, useDispatch } from "react-redux";
-// import { connect } from "react-redux";
-// import { addTodo } from "../redux/actions/todoAction";
 
 class Addtodo extends Component {
-  // const dispatch = useDispatch();
-  // const todo = useSelector(state => state.todo);
   state = {
     title: ""
   };
